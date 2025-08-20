@@ -1,7 +1,24 @@
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
+import { AuthContext } from "../../App";
 
+const LogoutButton = () => {
+  const { logout } = useContext(AuthContext);
+  
+  return (
+    <Button
+      onClick={logout}
+      variant="secondary"
+      size="lg"
+      className="gap-2 shadow-premium hover:shadow-hover"
+    >
+      <ApperIcon name="LogOut" size={18} />
+      Logout
+    </Button>
+  );
+};
 const Header = ({ onAddTask, taskStats }) => {
   return (
     <motion.header
@@ -32,7 +49,7 @@ const Header = ({ onAddTask, taskStats }) => {
           </motion.div>
         </div>
         
-        <div className="flex items-center gap-6">
+<div className="flex items-center gap-6">
           {taskStats && (
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -61,20 +78,30 @@ const Header = ({ onAddTask, taskStats }) => {
             </motion.div>
           )}
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-          >
-            <Button
-              onClick={onAddTask}
-              size="lg"
-              className="gap-3 shadow-premium hover:shadow-hover"
+          <div className="flex items-center gap-3">
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
             >
-              <ApperIcon name="Plus" size={20} />
-              Add Task
-            </Button>
-          </motion.div>
+              <Button
+                onClick={onAddTask}
+                size="lg"
+                className="gap-3 shadow-premium hover:shadow-hover"
+              >
+                <ApperIcon name="Plus" size={20} />
+                Add Task
+              </Button>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
+            >
+              <LogoutButton />
+            </motion.div>
+          </div>
         </div>
       </div>
     </motion.header>
