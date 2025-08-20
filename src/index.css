@@ -1,0 +1,79 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-light: #ffffff;
+  --toastify-color-dark: #1a202c;
+  --toastify-color-info: #4A90E2;
+  --toastify-color-success: #4ECDC4;
+  --toastify-color-warning: #FFE66D;
+  --toastify-color-error: #FF6B6B;
+  --toastify-toast-width: 320px;
+  --toastify-toast-min-height: 64px;
+  --toastify-font-family: 'Inter', sans-serif;
+  --toastify-z-index: 9999;
+}
+
+.Toastify__toast {
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(91, 79, 229, 0.15);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #4ECDC4 0%, #44B8B1 100%);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #FFE66D 0%, #FFD93D 100%);
+  color: #1a202c;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #F8F7FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #5B4FE5 0%, #8B7FF7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-premium {
+  box-shadow: 0 10px 25px rgba(91, 79, 229, 0.15);
+}
+
+.shadow-hover {
+  box-shadow: 0 15px 35px rgba(91, 79, 229, 0.25);
+}
